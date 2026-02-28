@@ -19,15 +19,17 @@ elif setdifficulty == 3:
     difficulty = 3
 else:
     print("Invalid difficulty")
-
-for i in range(difficulty):
-    guess = int(input("Guess a number between 0 and 100: "))
-    if guess > gues_this_number:
-        print(f"The number is lower than {guess}")
-    elif guess < gues_this_number:
-        print(f"The number is higher than {guess}")
-    elif guess == gues_this_number:
-        print(f"You guessed the correct number wich was: {gues_this_number}.")
-        break
-    else:
-        print(f"Wrong guess, the number was : {gues_this_number}")
+try:
+    for i in range(difficulty):
+        guess = int(input("Guess a number between 0 and 100: "))
+        if guess > gues_this_number:
+            print(f"The number is lower than {guess}")
+        elif guess < gues_this_number:
+            print(f"The number is higher than {guess}")
+        elif guess == gues_this_number:
+            print(f"You guessed the correct number wich was: {gues_this_number}.")
+            break
+        else:
+            print(f"Wrong guess, the number was : {gues_this_number}")
+except NameError:
+    print("diffeculty level not set, please choose a valid difficulty level")
